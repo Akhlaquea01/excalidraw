@@ -20,9 +20,7 @@ export const App: FC = () => {
     },
   ];
   return (
-    <>
-      <h1 style={{ textAlign: 'center' }}>Excalidraw Example</h1>
-      <div style={{ height: '500px' }}>
+    <div>
         <Excalidraw
           UIOptions={{
             tools: {
@@ -51,7 +49,6 @@ export const App: FC = () => {
         />
 
 
-      </div>
-    </>
+    </div>
   );
 };
