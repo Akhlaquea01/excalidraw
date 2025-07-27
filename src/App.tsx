@@ -77,4 +77,8 @@ export const App: FC<{ name: string }> = ({ name }) => {
             </Sidebar.Tabs>
           </Sidebar>
         </Excalidraw>
-        <img src={canvasUrl} alt="" /
+        <img src={canvasUrl} alt="" />
+      </div>
+    </>
+  );
+};
