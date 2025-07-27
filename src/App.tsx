@@ -3,7 +3,6 @@ import {
   Excalidraw,
   exportToBlob,
   exportToCanvas,
-  Sidebar,
 } from '@excalidraw/excalidraw';
 
 import './style.css';
@@ -19,9 +18,6 @@ const initialData: any = {
 export const App: FC<{ name: string }> = ({ name }) => {
   // const excalidraw = useRef<ExcalidrawImperativeAPI>();
   const [excalidrawAPI, setExcalidrawAPI] = useState<any>(null);
-  // Remove canvasElement state and related code
-  // const [canvasElement, setCanvasElement] = useState<HTMLCanvasElement | null>(null);
-  const [docked, setDocked] = useState(false);
 
   // Helper to export .excalidraw file
   const handleExport = () => {
@@ -114,7 +110,6 @@ export const App: FC<{ name: string }> = ({ name }) => {
       </button> */}
       <div style={{ height: '500px' }}>
         <Excalidraw
-          name={'hellooooo'}
           UIOptions={{
             tools: {
               image: false,
@@ -132,19 +127,8 @@ export const App: FC<{ name: string }> = ({ name }) => {
           onChange={(data) => {
             console.log(data);
           }}
-        >
-          <Sidebar name="custom" docked={docked} onDock={setDocked}>
-            <Sidebar.Header />
-            <Sidebar.Tabs style={{ padding: '0.5rem' }}>
-              <Sidebar.Tab tab="one">Tab one!</Sidebar.Tab>
-              <Sidebar.Tab tab="two">Tab two!</Sidebar.Tab>
-              <Sidebar.TabTriggers>
-                <Sidebar.TabTrigger tab="one">One</Sidebar.TabTrigger>
-                <Sidebar.TabTrigger tab="two">Two</Sidebar.TabTrigger>
-              </Sidebar.TabTriggers>
-            </Sidebar.Tabs>
-          </Sidebar>
-        </Excalidraw>
+        />
+        
 
       </div>
     </>
